@@ -1,15 +1,17 @@
 @mixin field-text {
   display: inline-block;
-  vertical-align: middle;
   width: 100%;
   min-height: calc(#{$line-height}em + #{$field-padding-vertical} + #{$field-padding-vertical} + 2px); // Привет, IE
+  vertical-align: middle;
+  padding: $field-padding-vertical  $field-padding-horizontal;
   margin: 0;
+
+  font-family: inherit;
+  font-size: 1em;
+  line-height: $line-height;
+
   border: 1px solid $border-color;
   border-radius: $border-radius;
-  padding: $field-padding-vertical  $field-padding-horizontal;
-  line-height: $line-height;
-  font-size: 1em;
-  font-family: inherit;
   background-color: #fff;
   -moz-appearance: textfield; // stylelint-disable-line
   appearance: textfield;
@@ -20,8 +22,8 @@
 
   &[disabled],
   &[readonly] {
-    cursor: not-allowed;
     background-color: $gray-lighter;
+    cursor: not-allowed;
   }
 
   &::-webkit-search-cancel-button,
@@ -45,8 +47,10 @@
 @mixin field-help-text {
   display: block;
   padding-top: 0.4em;
+
   font-size: $font-size-sm;
   line-height: 1.2em;
+
   color: $text-color-muted;
 
   &:empty { // stylelint-disable-line
@@ -64,6 +68,7 @@
 @mixin field-name {
   display: block;
   margin-bottom: 0.4em;
+
   line-height: $line-height;
   font-weight: 700;
 }

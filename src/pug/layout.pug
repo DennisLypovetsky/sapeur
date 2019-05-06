@@ -39,6 +39,9 @@ html(class='page  no-js', lang='en')
     .page__inner
       main.page__content
         block content
+      .page__footer-wrapper
+        +page-footer()
+          block footer
 
     block page-bottom
       script(src='js/bundle.js')

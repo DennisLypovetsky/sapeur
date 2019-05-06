@@ -3,8 +3,9 @@
   *,
   *:before,
   *:after {
-    background: transparent !important; // stylelint-disable-line  declaration-no-important
     color: #000 !important; // stylelint-disable-line  declaration-no-important
+
+    background: transparent !important; // stylelint-disable-line  declaration-no-important
     box-shadow: none !important; // stylelint-disable-line  declaration-no-important
     text-shadow: none !important; // stylelint-disable-line  declaration-no-important
   }
