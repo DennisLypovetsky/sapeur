@@ -9,15 +9,21 @@
   padding-right: $padding-right;
 }
 
+// margins, max-width and paddings: content size
+// in one statment
+@mixin maxw ($max-width: 1360) {
+  @include pd (calc((100vw - #{$max-width}#{px}) / 2));
+}
+
 // margin to the sides
 // helps to avoid overriding
-@mixin mg($margin-left, $margin-right: $margin-left) {
+@mixin mg ($margin-left, $margin-right: $margin-left) {
   margin-left: $margin-left;
   margin-right: $margin-right;
 }
 
 // margin-right except the last elements
-@mixin mg-right($margin-right) {
+@mixin mg-right ($margin-right) {
 
   &:not(:last-child) {
     margin-right: $margin-right;
@@ -25,7 +31,7 @@
 }
 
 // margin-bottom except last elements
-@mixin mg-bottom($margin-bottom) {
+@mixin mg-bottom ($margin-bottom) {
 
   &:not(:last-child) {
     margin-bottom: $margin-bottom;
@@ -33,7 +39,7 @@
 }
 
 // easy to make square
-@mixin size($width, $height: $width) {
+@mixin size ($width, $height: $width) {
   width: $width;
   height: $height;
 }

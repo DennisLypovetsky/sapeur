@@ -1,0 +1,13 @@
+// В этом файле должны быть стили для БЭМ-блока inner, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.inner {
+
+  $block-name:                &; // #{$block-name}__element
+  @include pd(10px);
+
+  @include bp(768) {
+    @include maxw(1170);
+  }
+}
