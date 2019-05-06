@@ -9,10 +9,10 @@
   padding-right: $padding-right;
 }
 
-// margins, max-width and paddings: content size
+// margins, max-width and paddings
 // in one statment
 @mixin maxw ($max-width: 1360) {
-  @include pd (calc((100vw - #{$max-width}#{px}) / 2));
+  @include pd(calc((100vw - #{$max-width}#{px}) / 2));
 }
 
 // margin to the sides

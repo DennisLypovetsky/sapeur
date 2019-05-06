@@ -1,13 +1,15 @@
-// В этом файле должны быть стили для БЭМ-блока inner, его элементов,
+// В этом файле должны быть стили для БЭМ-блока field, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.inner {
+.field {
 
   $block-name:                &; // #{$block-name}__element
-  @include pd(10px);
 
-  @include bp(1170 + 20) {
-    @include maxw(1170);
+  &__row,
+  &__column {
+    @include size(50px);
+
+    background-color: #d9d9d9;
   }
 }

@@ -10,7 +10,14 @@ block meta
 block content
   +b.SECTION.hero
     +e.inner.inner
-      p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia saepe laudantium tempore nisi quae dolore quos ullam placeat quibusdam. Rerum sit molestiae quasi. Quam, qui doloremque. Laboriosam a quam, ducimus ad itaque fuga, rerum ea sit aliquid facere dolorem ex repellendus non voluptatem voluptas pariatur labore ipsa, quod repudiandae omnis!
+      +e.HEADER.heading
+        +e.H1.title Sapeur — famous windows classic game
+      +b.TABLE.field
+        +e.TBODY.body
+          - for (var i = 10; i > 0; i--)
+            +e.TR.row
+              - for (var i = 10; i > 0; i--)
+                +e.TH.column
 
 //- block footer
 //-   p footer
