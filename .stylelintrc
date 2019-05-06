@@ -28,7 +28,8 @@
         "table",
         "^&:empty",
         "#{\\$[-a-z]+}__[-a-z]+",
-        "^\\*$"
+        "^\\*$",
+        "&"
       ],
     },
     {
@@ -40,10 +41,13 @@
     "order/order": [
       # Кастомные свойства
       "custom-properties",
+      # $variable
+      "dollar-variables",
       # Инклуды примесей
       {
         "type": "at-rule",
         "name": "include",
+        "hasBlock": false,
       },
       # Свойства
       "declarations",
@@ -77,11 +81,28 @@
     # https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md
     "order/properties-order": [[
       {
-        "properties": [
+        groupName: "layout",
+        emptyLineBefore: "always",
+        properties: [
           "content",
           "box-sizing",
+          "position",
+          "top",
+          "right",
+          "bottom",
+          "left",
+          "z-index",
+        ],
+      },
+      {
+        groupName: "box",
+        emptyLineBefore: "always",
+        properties: [
           "display",
           "flex",
+          "grid",
+          "grid-template",
+          "grid-template-*",
           "flex-wrap",
           "flex-basis",
           "flex-direction",
@@ -93,7 +114,6 @@
           "align-self",
           "justify-content",
           "order",
-          "grid",
           "grid-area",
           "grid-auto-*",
           "grid-column",
@@ -101,47 +121,64 @@
           "grid-gap",
           "grid-row",
           "grid-row-*",
-          "grid-template",
-          "grid-template-*",
-          "position",
-          "z-index",
-          "top",
-          "right",
-          "bottom",
-          "left",
           "width",
           "min-width",
           "max-width",
           "height",
           "min-height",
           "max-height",
-          "overflow",
-          "overflow-*",
-          "margin",
-          "margin-*",
-          "border",
-          "border-*",
+          "vertical-align",
           "padding",
           "padding-*",
-        ]
+          "margin",
+          "margin-*",
+        ],
       },
       {
-        # "emptyLineBefore": "always",
-        "properties": [
-          "transform",
-          "transform-*",
-          "backface-visibility",
-          "perspective",
-          "perspective-origin",
+        groupName: "typography",
+        emptyLineBefore: "always",
+        properties: [
+          "font",
+          "font-family",
+          "font-size",
+          "line-height",
+          "color",
+          "text-transform",
+          "text-decoration",
+        ],
+      },
+      {
+        groupName: "visual",
+        emptyLineBefore: "always",
+        properties: [
+          "border",
+          "border-top",
+          "border-left",
+          "border-right",
+          "border-bottom",
+          "border-radius",
+          "background",
+          "background-color",
+          "background-image",
+          "background-size",
+          "background-position",
+          "overflow",
+          "overflow-*",
+        ],
+      },
+      {
+        groupName: "other",
+        emptyLineBefore: "always",
+        properties: [
           "transition",
           "transition-*",
           "animation",
           "animation-*",
-        ]
+        ],
       },
     ],
       {
-        "severity": "warning",
+        "severity": "warning"
       }
     ],
     # http://stylelint.io/user-guide/rules/
