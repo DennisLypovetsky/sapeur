@@ -6,10 +6,18 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  &__row,
-  &__column {
+  &__cell {
     @include size(50px);
 
     background-color: #d9d9d9;
+
+    &--active {
+      background-color: darken(#d9d9d9, 5%);
+      box-shadow: inset 0 0 14px rgba(#000, 0.25);
+    }
+
+    &:not(#{$block-name}__cell--active) {
+      cursor: pointer;
+    }
   }
 }
